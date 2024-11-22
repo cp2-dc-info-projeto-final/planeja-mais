@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script type="module">
+      import './src/app.css'
+      import Login from './src/Login.svelte'
+
+      const login = new Login({
+        target: document.getElementById('login'),
+      })
+
+      export default login
+
+    </script>
+  </head>
+  <body>
+    <div id="login"></div>
+  </body>
+</html>
