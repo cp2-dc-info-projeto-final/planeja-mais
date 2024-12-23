@@ -1,86 +1,90 @@
-# Documento de Casos de Uso
 
-## Lista dos Casos de Uso
+# Casos de Uso do Sistema Planeja+
 
- - [CDU 01](#CDU-01): Quisque id neque a erat imperdiet dictum et ut mauris.
- - [CDU 02](#CDU-02): Morbi fringilla dolor at mattis vestibulum.
- - [CDU 03](#CDU-03): Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+## Caso de Uso 1: Cadastro de Usuário
+**Ator Primário**: Novo Usuário
 
+**Descrição**: Permite que novos usuários se cadastrem no sistema para acessar suas funcionalidades.
 
-## Lista dos Atores
+**Fluxo Principal**:
+1. O usuário acessa a página de cadastro.
+2. Preenche os campos obrigatórios: Nome, E-mail, Telefone (opcional) e Senha.
+3. O sistema valida se o e-mail é único e armazena os dados no banco de dados.
+4. O sistema confirma o cadastro e redireciona o usuário para a página de login.
 
- - Cras tempor
- - Donec a lorem
+**Fluxo Alternativo**:
+- Caso o e-mail já esteja em uso, o sistema exibe uma mensagem de erro e solicita um novo e-mail.
 
-## Diagrama de Casos de Uso
+---
 
-![Diagrama de Casos de Uso](diagrama-exemplo.png)
+## Caso de Uso 2: Login de Usuário
+**Ator Primário**: Usuário Registrado
 
-## Descrição dos Casos de Uso
+**Descrição**: Permite que usuários existentes autentiquem sua conta para acessar o sistema.
 
-### CDU 01
+**Fluxo Principal**:
+1. O usuário acessa a página de login.
+2. Preenche os campos de e-mail e senha.
+3. O sistema valida as credenciais com o banco de dados.
+4. Se as credenciais forem válidas, o sistema cria uma sessão e redireciona o usuário para a página inicial.
 
-Quisque id neque a erat imperdiet dictum et ut mauris.
+**Fluxo Alternativo**:
+- Caso as credenciais sejam inválidas, o sistema exibe uma mensagem de erro e solicita uma nova tentativa.
 
-**Fluxo Principal**
+---
 
-1. Vivamus nec velit id risus sodales fermentum ut a mi.
-2. Nunc a ligula ac libero pellentesque auctor ornare at sem.
-3. In quis ante scelerisque felis luctus malesuada.
-4. Pellentesque mattis dui quis eleifend accumsan.
+## Caso de Uso 3: Agendamento de Tarefa
+**Ator Primário**: Usuário Logado
 
-**Fluxo Alternativo A**
+**Descrição**: Permite que usuários criem novos agendamentos de tarefas.
 
-1. Pellentesque id mauris id ex fringilla iaculis.
-2. Maecenas ut dui at sapien rhoncus porttitor in sed turpis.
-3. Maecenas fringilla augue id sodales volutpat.
-4. Nulla vehicula lectus eu eros faucibus porta.
-5. Morbi non sem in diam dictum aliquet sit amet at metus.
-6. Aenean dictum diam in tempus ornare.
+**Fluxo Principal**:
+1. O usuário logado acessa a página inicial.
+2. Preenche os campos obrigatórios: Nome, Tarefa, Data e Hora.
+3. O sistema valida os dados e armazena o agendamento no banco de dados.
+4. O sistema exibe uma mensagem de confirmação e lista os agendamentos realizados.
 
-**Fluxo Alternativo B**
+**Fluxo Alternativo**:
+- Caso algum campo esteja vazio ou a data seja inválida, o sistema exibe uma mensagem de erro e solicita a correção.
 
-1. Ut elementum dolor id lorem elementum, et condimentum eros laoreet.
-2. Nulla sollicitudin arcu nec suscipit volutpat.
-3. Aliquam mattis sapien nec ornare faucibus.
-4. Sed eu massa nec enim condimentum commodo at eget ligula.
-5. Nam ultricies velit nec erat feugiat condimentum.
-6. Nam vitae lacus porttitor, sodales orci vel, lobortis arcu.
+---
 
+## Caso de Uso 4: Listagem de Agendamentos
+**Ator Primário**: Usuário Logado
 
-### CDU 02
+**Descrição**: Permite que o usuário visualize os agendamentos realizados.
 
-Morbi fringilla dolor at mattis vestibulum.
+**Fluxo Principal**:
+1. O usuário logado acessa a página de listagem de agendamentos.
+2. O sistema exibe uma tabela com os seguintes dados:
+   - Nome
+   - Tarefa
+   - Data e Hora
+3. O usuário pode optar por cancelar um agendamento clicando no botão correspondente.
 
-**Fluxo Principal**
+---
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-2. Mauris varius massa ac fermentum scelerisque.
-3. Morbi in tortor dignissim, bibendum tellus et, varius odio.
-4. Mauris egestas leo a suscipit feugiat.
+## Caso de Uso 5: Cancelamento de Agendamento
+**Ator Primário**: Usuário Logado
 
-**Fluxo Alternativo A**
+**Descrição**: Permite que o usuário exclua um agendamento já criado.
 
-1. Nulla elementum diam eu elementum rutrum.
-2. Aenean scelerisque est at nunc ornare, ac condimentum justo sollicitudin.
-3. Quisque eget risus ut est lacinia sollicitudin ac non diam.
-4. Quisque ac nulla convallis, lobortis nibh ac, tristique enim.
-5. Nulla ultricies metus nec risus mollis, interdum ultrices justo malesuada.
+**Fluxo Principal**:
+1. O usuário logado acessa a página de listagem de agendamentos.
+2. Clica no botão "Cancelar" ao lado do agendamento desejado.
+3. O sistema solicita confirmação do usuário.
+4. O sistema remove o agendamento do banco de dados e exibe uma mensagem de sucesso.
 
-### CDU 03
+**Fluxo Alternativo**:
+- Caso o agendamento não exista mais no banco de dados, o sistema exibe uma mensagem de erro.
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+---
 
-**Fluxo Principal**
+## Caso de Uso 6: Logout
+**Ator Primário**: Usuário Logado
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
-2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
-3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
+**Descrição**: Permite que o usuário finalize sua sessão no sistema.
 
-**Fluxo Alternativo A**
-
-1. Aliquam efficitur arcu ac fermentum egestas.
-2. Pellentesque ac diam vitae erat bibendum hendrerit.
-3. Mauris sed purus sit amet lectus efficitur placerat et eu diam.
-4. Aenean ullamcorper tellus quis nibh porttitor congue.
-5. Phasellus laoreet erat eget condimentum dictum.
+**Fluxo Principal**:
+1. O usuário logado clica no botão "Logout" no menu superior.
+2. O sistema encerra a sessão e redireciona o usuário para a página de login.

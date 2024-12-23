@@ -1,37 +1,81 @@
-# Nome do Meu Projeto
 
-Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colégio Pedro II - Campus Duque de Caxias
+# Planeja+
 
-**Integrantes:**
- - Fulano
- - Beltrano
- - Ciclano
+## Descrição
+O **Planeja+** é um sistema de agendamento desenvolvido em PHP, utilizando Bootstrap para estilização e MySQL como banco de dados. Ele foi projetado para permitir que os usuários cadastrem tarefas, visualizem e gerenciem seus agendamentos de forma simples e eficiente.
 
- ## Tecnologias
+## Funcionalidades
 
-Este projeto é desenvolvido utilizando  para desenvolvimento da API de backend, Svelte como framework frontend e Tailwind como framework CSS.
+### 1. Cadastro de Usuário
+- Permite que novos usuários se cadastrem no sistema.
+- Campos obrigatórios: Nome, E-mail, e Senha.
 
-Em termos de arquitetura de software, este projeto é composto por duas aplicações:
-- API/Backend desenvolvida em Node.js com Express
-- Aplicação Frontend desenvolvida com Svelte e estilizada com Tailwind
+### 2. Login
+- Autentica os usuários cadastrados.
+- Protege as páginas restritas com verificação de sessão.
 
-A Aplicação frontend realiza requisições à API utilizando os verbos HTTP, que por sua vez retorna as informações a serem tratadas pela interface. Todo envio e rebimento de informações entre as duas aplicações é realizada utilizando o formato JSON.
+### 3. Agendamento de Tarefas
+- Usuários logados podem cadastrar tarefas com nome, descrição e data/hora.
 
-Para detalhes técnicos de como executar o projeto consulte o [README da API](src/api/README.md) e [README da Aplicação Frontend](src/frontend-app/README.md). 
+### 4. Listagem de Agendamentos
+- Exibe todos os agendamentos do usuário logado em uma tabela.
+- Possui opção para cancelar agendamentos.
 
-## Descrição do Projeto
+### 5. Cancelamento de Agendamentos
+- Permite excluir um agendamento através da página de listagem.
+- Exibe mensagens de sucesso ou erro após a ação.
 
-Nunc aliquet lobortis tristique. In pretium nisi vitae viverra venenatis. Ut iaculis sem quis arcu ornare interdum. In id condimentum arcu, sed ornare sem. Aliquam consequat at dolor eget sagittis. Praesent nec ante eget felis porttitor cursus eget suscipit urna. Sed consequat consectetur tristique.
+### 6. Logout
+- Encerra a sessão do usuário logado e redireciona para a página de login.
 
-Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. Vestibulum at libero euismod felis feugiat tempus eu sagittis lorem. Vestibulum ultrices, mi euismod eleifend viverra, odio enim volutpat tortor, sed condimentum odio est id purus. Sed at leo vel ligula luctus bibendum in sed justo. Duis sodales consectetur vestibulum. Morbi libero quam, varius ac sodales eget, bibendum eu quam. In accumsan ac turpis vitae porttitor. Nulla eget velit in nisl vulputate sagittis. Phasellus ligula mi, viverra id vehicula nec, varius eget diam. Vestibulum id ultricies nulla, vel sagittis lorem. Sed aliquam dictum lacus quis maximus.
+## Estrutura do Projeto
 
-## Documentação
+### Diretórios e Arquivos
 
-- [Manual do Usuário](manual.md)
-- [Requisitos](requisitos.md)
-- [Casos de Uso](casos-de-uso.md)
-- [Apresentação](apresentacao.pdf)
+- **autenticar.php**: Processa o login dos usuários.
+- **cadastro.php**: Gerencia o cadastro de novos usuários.
+- **cancelar_agendamento.php**: Realiza a exclusão de agendamentos existentes.
+- **conexao.php**: Configuração da conexão com o banco de dados MySQL.
+- **index.php**: Página inicial para realizar agendamentos.
+- **login.php**: Interface de login do sistema.
+- **logout.php**: Encerra a sessão do usuário.
+- **pagina_listar.php**: Exibe a listagem dos agendamentos do usuário logado.
+- **processa.php**: Processa os dados enviados pelo formulário de agendamento.
+- **Planejamais.sql**: Script para criação do banco de dados e tabelas necessárias.
+- **loader.gif**: Recurso visual para carregamento.
 
-**Modelagem do Banco de Dados**
+### Diretórios Adicionais
 
-![Diagrama de Banco de Dados](diagrama-exemplo.png)
+- **css/**: Contém os arquivos de estilização (CSS).
+- **js/**: Scripts JavaScript usados no sistema.
+- **bootstrap-datetimepicker/**: Biblioteca para seleção de datas e horas.
+
+## Requisitos
+
+- PHP 7.4 ou superior.
+- Servidor MySQL.
+- Navegador moderno (Google Chrome, Firefox, etc.).
+
+## Configuração
+
+1. Clone o repositório ou extraia os arquivos do ZIP em seu servidor.
+2. Configure o arquivo `conexao.php` com as credenciais do seu banco de dados MySQL:
+
+   ```php
+   $servidor = "localhost";
+   $usuario = "seu_usuario";
+   $senha = "sua_senha";
+   $dbname = "Planejamais";
+   ```
+
+3. Importe o arquivo `Planejamais.sql` em seu banco de dados para criar as tabelas e os dados iniciais.
+4. Acesse o sistema através do navegador.
+
+## Como Usar
+
+1. Cadastre-se através da página de cadastro.
+2. Realize o login com suas credenciais.
+3. Gerencie seus agendamentos utilizando as funcionalidades de criação, visualização e exclusão de tarefas.
+
+## Autor
+Sistema desenvolvido por [igor honorio das Flores ferreira].

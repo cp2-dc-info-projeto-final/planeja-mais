@@ -1,21 +1,36 @@
+
 # Documento de Requisitos
 
 ## Requisitos Funcionais
 
 ### RF 01
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit nulla vel diam vehicula, eu porttitor nulla aliquam.
+O sistema deve permitir o cadastro de novos usuários.
 
 ### RF 02
+O sistema deve permitir o login dos usuários utilizando e-mail e senha.
 
-Nullam laoreet, mauris ac tempor vulputate, orci metus aliquet augue, at accumsan odio mi eu sapien. Aliquam tincidunt metus ut aliquet vehicula. Aliquam vitae arcu sed lacus fermentum sagittis.
+### RF 03
+O sistema deve permitir que os usuários agendem tarefas com nome, descrição e data/hora.
+
+### RF 04
+O sistema deve listar os agendamentos realizados pelo usuário logado.
+
+### RF 05
+O sistema deve permitir o cancelamento de agendamentos.
+
+### RF 06
+O sistema deve proteger as páginas restritas com verificação de sessão.
 
 ## Requisitos Não-Funcionais
 
 ### RNF 01
-
-Nulla facilisi. Etiam tempus dolor et odio tincidunt fermentum. Donec pharetra nulla eu euismod maximus. Maecenas eu mauris tincidunt, pulvinar tellus sed, blandit eros.
+O sistema deve ser responsivo e acessível em dispositivos móveis.
 
 ### RNF 02
+O sistema deve utilizar conexão segura com o banco de dados.
 
-Nam id enim ut quam faucibus scelerisque at non diam. Morbi eget eleifend lectus, quis fringilla elit. Morbi iaculis, elit vel accumsan hendrerit, ipsum purus varius lacus, eget facilisis massa mauris ac ipsum.
+### RNF 03
+O sistema deve ter um tempo de resposta médio inferior a 2 segundos por requisição.
+
+### RNF 04
+O sistema deve ser compatível com PHP 7.4 ou superior e MySQL 5.7 ou superior.
